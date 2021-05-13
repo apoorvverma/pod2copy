@@ -1,0 +1,73 @@
+.Google{
+    padding: 5px 10px;
+    display: flex;
+    align-items:center;
+    outline:none;
+    border: none;
+    border-radius:4px;
+    font-weight: bold;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px rgb(221, 221, 221);
+    cursor: pointer;
+}
+
+.Google img{
+    margin-right: 10px;
+}
+
+.Github{
+    padding: 5px 10px;
+    display: flex;
+    align-items:center;
+    outline:none;
+    border: none;
+    border-radius:4px;
+    font-weight: bold;
+    background-color: #2D3748;
+    box-shadow: 2px 2px 5px rgb(221, 221, 221);
+    color: #fff;
+    cursor: pointer;
+   
+}
+.Github img{
+    margin-right: 10px;
+}
+
+
+.Dribble{
+    padding: 5px 10px;
+    display: flex;
+    align-items:center;
+    outline:none;
+    border: none;
+    border-radius:4px;
+    font-weight: bold;
+    background-color: #ED64A6;
+    box-shadow: 2px 2px 5px rgb(221, 221, 221);
+    color: #fff;
+    cursor: pointer;
+}
+.Dribble img{
+    margin-right: 10px;
+}
+
+
+.Village{
+    padding: 10px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    outline:none;
+    border: none;
+    border-radius:4px;
+    font-weight: bold;
+    background-color: #2D3748;
+    box-shadow: 2px 2px 5px rgb(221, 221, 221);
+    color: #fff;
+    cursor: pointer;
+}
+
+.Village img{
+    margin-right: 10px;
+}
+
