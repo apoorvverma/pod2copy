@@ -1,0 +1,84 @@
+.hero {
+	height: 100vh;
+	background-image: url(./../../assets/Hero-vector.svg);
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&-heading {
+		margin-top: 10rem;
+		font-family: "Lora", serif;
+		// width: 90%;
+
+		span {
+			color: #1b9cfc;
+		}
+	}
+
+	&-form {
+		margin: 2rem auto 1.5rem auto;
+
+		&-input {
+			font-size: 1rem;
+			font-weight: 700;
+			color: #2d3748;
+			padding: 0.5rem 0.8rem;
+			margin-right: 1.2rem;
+			width: 17rem;
+			background-color: #edf2f7;
+			box-shadow: #00000029 0px 1px 3px;
+			border: none;
+			border-radius: 0.2rem;
+			outline: none;
+		}
+		&-btn {
+			outline: none;
+			border: none;
+			font-size: 1rem;
+			font-weight: 700;
+			// display: flex;
+			// align-items: center;
+			// flex-direction: row;
+			padding: 0.5rem 0.8rem;
+			border-radius: 0.2rem;
+			box-shadow: #00000029 0px 3px 6px;
+			background-color: #1b9cfc;
+			color: white;
+			cursor: pointer;
+
+			span {
+				margin-right: 0.8rem;
+			}
+		}
+	}
+
+	&-text {
+		color: #718096;
+	}
+
+	@media (max-width: 768px) {
+		&-heading {
+			font-size: 2.5rem;
+			text-align: center;
+			margin-top: 8rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		&-heading {
+			margin-top: 6rem;
+		}
+		&-form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			&-input {
+				margin-right: 0;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}
