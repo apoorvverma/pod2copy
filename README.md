@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Hustlers Village Signup Section
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Includes Button groups and input components (Hustlers Village Signup Section)
 
 ## Available Scripts
 
