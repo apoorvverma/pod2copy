@@ -21,9 +21,9 @@ const Signup = () => {
       </div>
 
       <div className="division">
-      <div className="div--line" />
+        <div className="div--line" />
         <p className="divide-line">or log in with email</p>
-        <div className="div--line" />  
+        <div className="div--line" />
       </div>
       <div className="registraton-from">
         <form action="">
@@ -66,7 +66,9 @@ const Signup = () => {
         </form>
         <Button label="Take Me To The Village" btn_icon={arrowIcon} />
         <div className="have-account">
-        <p className="subtitles">Already have an account?  <a href="#password"> Sign in</a></p>
+          <p className="subtitles">
+            Already have an account? <a href="#password"> Sign in</a>
+          </p>
         </div>
       </div>
     </div>
