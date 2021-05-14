@@ -5,6 +5,8 @@ import "./btn.css"
 interface IProps {
     buttonStyle: string,
     buttonSize: string,
+    iconAlign?:string,
+    icon?:React.ReactNode,
     children?: React.ReactNode,
     onClick:React.MouseEventHandler<HTMLButtonElement> | undefined,  
     }
@@ -19,12 +21,14 @@ interface IProps {
     
 
 
-const Button :React.FC<IProps> = ({buttonSize,buttonStyle,children,onClick}) => {
+const Button :React.FC<IProps> = ({buttonSize,buttonStyle,children,icon,iconAlign,onClick}) => {
 
-    
 const STYLES:string[] = [
    "btn--primary",
-   "btn--secondary"
+   "btn--secondary",
+   "btn--blue",
+   "btn--dribbble",
+   "btn--google"
 ]
 
 const SIZES:string[] = [
@@ -43,8 +47,9 @@ const checkbuttonStyle=STYLES.includes(buttonStyle)
     return(
         <button 
         onClick={()=>onClick}
-        className={` btn ${checkbuttonStyle} ${checkbuttonSize} `} 
+        className={` btn ${checkbuttonStyle} ${checkbuttonSize} ${iconAlign?iconAlign:"btn--iconright"}`} 
         >
+            {icon}
             {children}
         </button>
     )
