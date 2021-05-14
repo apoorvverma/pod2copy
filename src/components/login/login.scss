@@ -1,0 +1,158 @@
+.body {
+    margin: 4rem 4rem; 
+    padding: 2rem 2rem;
+    text-align: center;
+    box-shadow: 0px 0px 10px #0000001A;
+    border-radius: 5px;
+}
+
+body {
+    font-family: 'Roboto' , sans-serif;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+  
+
+hr {
+    width: 5rem;
+    height: 0;
+    margin: 0 5px;
+    color: #707070;
+} 
+
+.option {
+    color: #1A202C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 1em
+    
+}
+
+.social {
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 10px;
+    align-items: center;
+    margin:0 10px;
+    font-size: 14px
+}
+
+.social:hover {
+    box-shadow: 0px 3px 6px #00000029;
+}
+
+#google {
+    background-color: #F7FAFC;
+    color: #2D3748;
+    
+}
+
+#github {
+    background-color: #2D3748;
+    color: #FFFFFF;
+    
+}
+
+#dribbble {
+    background-color: #ED64A6;
+    color: #FFFFFF;
+  
+}
+
+.input {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.inline {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input_title {
+    font-size: 14px;
+    font-weight: 600
+}
+
+.input_titleb {
+    margin-top: 5px;   
+    font-size: 14px;
+    font-weight: 600
+    
+}
+
+.field {
+    background-color: #EDF2F7;
+    border: none;
+    padding: 1em 1em;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 90%;
+
+}
+
+.field:hover {
+    box-shadow: 0px 1px 3px #00000029;
+}
+
+#forgot {
+    color: #1B9CFC;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.log {
+    color: #1A202C;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.login {
+    background-color: #2D3748;
+    border: none;
+    color: #FFFFFF;
+    font-size: 14px;
+    border-radius: 5px; 
+    align-items: baseline;
+    margin-top: 10px;
+    padding: 10px 80px;
+    width: 100%;
+}
+
+.login:hover {
+    box-shadow: 0px 3px 6px #00000029;
+}
+
+#arrow {
+    width: 10px;
+}
+
+.note {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+
+@media only screen and (max-width: 581px) {
+    .container{
+     margin: 2rem 2rem;
+    }
+  }
+
+  @media only screen and (max-width: 992px) {
+    .container{
+     margin: 2rem 2rem;
+    }
+  }
