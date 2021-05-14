@@ -1,3 +1,4 @@
+import React from "react";
 import google from "../../assets/Google.svg";
 import dribbble from "../../assets/dribbble.svg";
 import github from "../../assets/github.svg";
@@ -5,11 +6,39 @@ import btnarrow from "../../assets/btnarrow.svg";
 import Button from "../../components/shared/Button";
 import "./Signup.css";
 
+
+// interfac for user details
+interface IUser {
+  firstname: string;
+  lastname: string;
+  email: string;
+  password: string;
+}
+
 const Signup = () => {
   const googleIcon = google;
   const dribbbleIcon = dribbble;
   const githubIcon = github;
   const arrowIcon = btnarrow;
+//user info state hook
+  const [signup, setSignup] = React.useState<IUser>({
+    firstname: "",
+    lastname: "",
+    email: "",
+    password: "",
+  });
+// handleInput ()=> handles input states
+  const handleInput: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setSignup({ ...signup, [name]: value });
+  };
+// handleSubmit ()=> handles form submission
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault();
+    const userData = { ...signup };
+    console.log(userData);
+  };
 
   return (
     <div className="signup-card">
@@ -26,14 +55,15 @@ const Signup = () => {
         <div className="div--line" />
       </div>
       <div className="registraton-from">
-        <form action="">
+        <form action="" onSubmit={handleSubmit}>
           <div className="user-name" id="user-name">
             <div id="first-name" className="input-elems">
-              <label htmlFor="firstName">First name</label>
+              <label htmlFor="firstname">First name</label>
               <input
                 type="text"
-                name="firstName"
-                value=""
+                name="firstname"
+                value={signup.firstname}
+                onChange={handleInput}
                 placeholder="first name"
               />
             </div>
@@ -43,7 +73,8 @@ const Signup = () => {
               <input
                 type="text"
                 name="lastname"
-                value=""
+                value={signup.lastname}
+                onChange={handleInput}
                 placeholder="last name"
               />
             </div>
@@ -51,25 +82,37 @@ const Signup = () => {
 
           <div className="input-elems outer-elems" id="email">
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" value="" placeholder="email" />
+            <input
+              type="email"
+              name="email"
+              value={signup.email}
+              onChange={handleInput}
+              placeholder="email"
+            />
           </div>
 
           <div className="input-elems  outer-elems" id="password">
-            <label htmlFor="pssword">Password</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               name="password"
-              value=""
+              value={signup.password}
+              onChange={handleInput}
               placeholder="password"
             />
           </div>
+
+          <Button
+            label="Take Me To The Village"
+            type="submit"
+            btn_icon={arrowIcon}
+          />
+          <div className="have-account">
+            <p className="subtitles">
+              Already have an account? <a href="#password"> Sign in</a>
+            </p>
+          </div>
         </form>
-        <Button label="Take Me To The Village" btn_icon={arrowIcon} />
-        <div className="have-account">
-          <p className="subtitles">
-            Already have an account? <a href="#password"> Sign in</a>
-          </p>
-        </div>
       </div>
     </div>
   );
