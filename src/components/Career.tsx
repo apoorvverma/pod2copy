@@ -6,7 +6,7 @@ import developer from './icons/developer.svg'
 import recruiter from './icons/recruiter.svg'
 import other from './icons/other.svg'
 
-import './career.css'
+import './career.scss'
 
 const CareerData = [
     {

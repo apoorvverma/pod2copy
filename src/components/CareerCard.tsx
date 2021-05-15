@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './career.css'
+import './career.scss'
 
 interface CardProps {
     name: string;
@@ -9,10 +9,10 @@ interface CardProps {
 
 const CardCareer: React.FC<CardProps> = ({ name, icon }) => {
     return (
-      <div className="career-card"  >
+      <div className="career--card"  >
   
         <img src={icon} alt={name} />
-        <p  className="career-card--name" >{name}</p>
+        <p  className="career--card--name" >{name}</p>
   
       </div>
     )
