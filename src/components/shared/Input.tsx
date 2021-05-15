@@ -24,7 +24,8 @@ const Input: React.FC<IProps> = ({
 }) => {
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { value } = e.target;
-		onChange(value);
+		// onChange(value);
+		console.log(e.target.value);
 	};
 
 	return (
@@ -34,7 +35,7 @@ const Input: React.FC<IProps> = ({
 			value={value}
 			className="input"
 			placeholder={placeholder}
-			onChange={handleChange}
+			onChange={() => handleChange}
 		/>
 	);
 };

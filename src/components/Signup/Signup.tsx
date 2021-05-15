@@ -91,7 +91,7 @@ const Signup = () => {
 
 								<Input
 									value={signup.firstname}
-									onChange={handleInput}
+									onChange={() => handleInput}
 									placeholder="first name"
 									name="firstname"
 									type="text"
