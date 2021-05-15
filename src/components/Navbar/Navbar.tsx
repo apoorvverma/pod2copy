@@ -2,7 +2,7 @@ import React from "react";
 import "./Navbar.scss";
 import Button from "./../shared/Button";
 import { Link } from "react-router-dom";
-import { IconRightArrow } from "./../shared/Icons";
+import IconRightArrow from "./../../assets/Icon-metro-arrow-right.svg";
 
 const Navbar: React.FC = () => {
 	return (
@@ -26,12 +26,12 @@ const Navbar: React.FC = () => {
 
 				<Link to="/signup">
 					<Button
-						// icon={<IconRightArrow/>}
+						icon={IconRightArrow}
 						buttonStyle="btn--primary"
 						buttonSize="btn--medium"
 						onClick={(e) => e.preventDefault}
 					>
-						Register 🡪
+						Register
 					</Button>
 				</Link>
 			</div>

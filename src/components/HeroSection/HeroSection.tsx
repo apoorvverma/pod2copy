@@ -3,7 +3,8 @@ import React from "react";
 // import { useHistory } from "react-router-dom";
 import Button from "../shared/Button";
 import Input from "../shared/Input";
-import { IconRightArrow } from "./../shared/Icons";
+// import { IconRightArrow } from "./../shared/Icons";
+import IconRightArrow from "./../../assets/Icon-metro-arrow-right.svg";
 import "./HeroSection.scss";
 
 interface HSprops {
@@ -46,7 +47,7 @@ const HeroSection: React.FC = () => {
 				/>
 
 				<Button
-					icon={<IconRightArrow />}
+					icon={IconRightArrow}
 					buttonStyle="btn--blue"
 					buttonSize="btn--medium"
 					onClick={(e) => e.preventDefault}

@@ -6,6 +6,7 @@ interface IProps {
 	placeholder?: string;
 	type?: string;
 	onChange: Function;
+	name?: string;
 }
 
 const DProps = {
@@ -14,7 +15,13 @@ const DProps = {
 	type: "text",
 };
 
-const Input: React.FC<IProps> = ({ value, placeholder, type, onChange }) => {
+const Input: React.FC<IProps> = ({
+	value,
+	placeholder,
+	type,
+	onChange,
+	name,
+}) => {
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { value } = e.target;
 		onChange(value);
@@ -22,6 +29,7 @@ const Input: React.FC<IProps> = ({ value, placeholder, type, onChange }) => {
 
 	return (
 		<input
+			name={name}
 			type={type}
 			value={value}
 			className="input"

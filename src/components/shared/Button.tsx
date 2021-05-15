@@ -6,8 +6,9 @@ interface IProps {
 	buttonStyle: string;
 	buttonSize: string;
 	iconAlign?: string;
-	icon?: React.ReactNode;
+	icon?: any;
 	children?: React.ReactNode;
+	type?: string;
 	onClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
 }
 
@@ -48,7 +49,7 @@ const Button: React.FC<IProps> = ({
 				iconAlign ? iconAlign : "btn--iconright"
 			}`}
 		>
-			{icon}
+			{icon ? <img src={icon} alt="Social button" /> : null}
 			{children}
 		</button>
 	);
