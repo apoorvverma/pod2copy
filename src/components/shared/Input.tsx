@@ -1,5 +1,5 @@
 import React from "react";
-import "./input.css";
+import "./input.scss";
 
 interface IProps {
 	value: string;

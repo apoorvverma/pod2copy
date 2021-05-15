@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./btn.css";
+import "./btn.scss";
 
 interface IProps {
 	buttonStyle: string;
