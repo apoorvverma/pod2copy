@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import './App.css';
 
-
+import Career from './components/Career'
 
 
 function App() {
@@ -27,6 +27,7 @@ function App() {
           Learn React
         </a>
       </header> */}
+      <Career/>
      </div>
   );
 }
