@@ -1,6 +1,7 @@
 import React from "react";
 import "./Navbar.scss";
 import Button from "./../shared/Button";
+import { Link } from "react-router-dom";
 import { IconRightArrow } from "./../shared/Icons";
 
 const Navbar: React.FC = () => {
@@ -13,21 +14,26 @@ const Navbar: React.FC = () => {
 				<p>Contact</p>
 				{/* <button className="Login">Log in</button>
                 <button  className="Register">Register 🡪</button> */}
-				<Button
-					buttonStyle="btn--secondary"
-					buttonSize="btn--medium"
-					onClick={(e) => e.preventDefault}
-				>
-					Log in
-				</Button>
-				<Button
-					// icon={<IconRightArrow/>}
-					buttonStyle="btn--primary"
-					buttonSize="btn--medium"
-					onClick={(e) => e.preventDefault}
-				>
-					Register 🡪
-				</Button>
+				<Link to="/login">
+					<Button
+						buttonStyle="btn--secondary"
+						buttonSize="btn--medium"
+						onClick={(e) => e.preventDefault}
+					>
+						Log in
+					</Button>
+				</Link>
+
+				<Link to="/signup">
+					<Button
+						// icon={<IconRightArrow/>}
+						buttonStyle="btn--primary"
+						buttonSize="btn--medium"
+						onClick={(e) => e.preventDefault}
+					>
+						Register 🡪
+					</Button>
+				</Link>
 			</div>
 			<span className="burger">
 				<svg
