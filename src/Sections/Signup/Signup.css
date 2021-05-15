@@ -95,6 +95,7 @@ a {
   .social-btns {
     flex-direction: column;
     width: 50%;
+    height: 9em;
   }
   .input-elems {
     margin: 1em 0;
@@ -111,5 +112,8 @@ a {
   }
   form {
     width: 100%;
+  }
+  .division {
+    margin: 1em;
   }
 }

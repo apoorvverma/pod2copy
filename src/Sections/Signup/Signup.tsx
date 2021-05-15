@@ -5,7 +5,7 @@ import github from "../../assets/github.svg";
 import btnarrow from "../../assets/btnarrow.svg";
 import Button from "../../components/shared/Button";
 import "./Signup.css";
-
+import Input from "../../components/shared/Input";
 
 // interfac for user details
 interface IUser {
@@ -20,20 +20,20 @@ const Signup = () => {
   const dribbbleIcon = dribbble;
   const githubIcon = github;
   const arrowIcon = btnarrow;
-//user info state hook
+  //user info state hook
   const [signup, setSignup] = React.useState<IUser>({
     firstname: "",
     lastname: "",
     email: "",
     password: "",
   });
-// handleInput ()=> handles input states
+  // handleInput ()=> handles input states
   const handleInput: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     setSignup({ ...signup, [name]: value });
   };
-// handleSubmit ()=> handles form submission
+  // handleSubmit ()=> handles form submission
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     const userData = { ...signup };
@@ -44,9 +44,30 @@ const Signup = () => {
     <div className="signup-card">
       <h2 className="signup-header">Register To HustlersVillage</h2>
       <div className="social-btns">
-        <Button label="Google" btn_icon={googleIcon} />
-        <Button label="Github" btn_icon={githubIcon} />
-        <Button label="Dribble" btn_icon={dribbbleIcon} />
+        <Button
+          buttonSize="btn--medium"
+          buttonStyle="btn--google"
+          children="Google"
+          iconAlign="btn--iconleft"
+          icon={googleIcon}
+          onClick={undefined}
+        />
+        <Button
+          buttonSize="btn--medium"
+          buttonStyle="btn--primary"
+          children="Github"
+          iconAlign="btn--iconleft"
+          icon={githubIcon}
+          onClick={undefined}
+        />
+        <Button
+          buttonSize="btn--medium"
+          buttonStyle="btn--dribbble"
+          children="Dribbble"
+          iconAlign="btn--iconleft"
+          icon={dribbbleIcon}
+          onClick={undefined}
+        />
       </div>
 
       <div className="division">
@@ -59,53 +80,65 @@ const Signup = () => {
           <div className="user-name" id="user-name">
             <div id="first-name" className="input-elems">
               <label htmlFor="firstname">First name</label>
-              <input
+              {/* <input
                 type="text"
                 name="firstname"
                 value={signup.firstname}
                 onChange={handleInput}
                 placeholder="first name"
+              /> */}
+
+              <Input
+                value={signup.firstname}
+                onChange={handleInput}
+                placeholder="first name"
+                name="firstname"
+                type="text"
               />
             </div>
 
             <div id="last-name" className="input-elems">
               <label htmlFor="lastname">Last name</label>
-              <input
-                type="text"
-                name="lastname"
+              <Input
                 value={signup.lastname}
                 onChange={handleInput}
                 placeholder="last name"
+                name="lastname"
+                type="text"
               />
             </div>
           </div>
 
           <div className="input-elems outer-elems" id="email">
             <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              name="email"
+            <Input
               value={signup.email}
               onChange={handleInput}
               placeholder="email"
+              name="email"
+              type="email"
             />
           </div>
 
           <div className="input-elems  outer-elems" id="password">
             <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              name="password"
+            <Input
               value={signup.password}
               onChange={handleInput}
               placeholder="password"
+              name="password"
+              type="password"
             />
           </div>
 
           <Button
-            label="Take Me To The Village"
+            buttonSize="btn--large"
+            buttonStyle="btn--perimary"
+            children="Take Me To The Village"
+            iconAlign="btn--iconleft"
+            icon={arrowIcon}
+            onClick={undefined}
             type="submit"
-            btn_icon={arrowIcon}
           />
           <div className="have-account">
             <p className="subtitles">
