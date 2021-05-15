@@ -1,12 +1,30 @@
 .input {
-  background: #edf2f7 padding-box;
-  outline: none;
-  border: none;
-  border-radius: 6px;
-  padding: 8px 16px;
-  min-width: fit-content;
-  font-size: 14px;
-  color: #2d3748;
-  transition: transform 0.3s ease;
-  box-shadow: 0px 1px 3px #00000029;
+	background: #edf2f7 padding-box;
+	outline: none;
+	border: none;
+	border-radius: 6px;
+	padding: 8px 16px;
+	width: 94%;
+	font-size: 14px;
+	transition: transform 0.3s ease;
+	box-shadow: 0px 1px 3px #00000029;
+	&--group {
+		color: #2d3748;
+		text-align: left;
+		margin: 5px 0;
+		width: 100%;
+	}
+
+	&--label {
+		font-weight: 500;
+		text-transform: capitalize;
+		margin: 5px 0;
+	}
+}
+
+.pass--label {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 5px;
 }

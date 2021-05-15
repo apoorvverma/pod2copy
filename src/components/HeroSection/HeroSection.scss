@@ -10,7 +10,6 @@
 	&-heading {
 		margin-top: 10rem;
 		font-family: "Lora", serif;
-		// width: 90%;
 
 		span {
 			color: #1b9cfc;
@@ -21,6 +20,11 @@
 		display: flex;
 		align-items: center;
 		margin: 2rem auto 1.5rem auto;
+
+		&-two {
+			display: flex;
+			align-items: center;
+		}
 
 		&-input {
 			font-size: 1rem;
@@ -40,9 +44,6 @@
 			border: none;
 			font-size: 1rem;
 			font-weight: 700;
-			// display: flex;
-			// align-items: center;
-			// flex-direction: row;
 			padding: 0.5rem 0.8rem;
 			border-radius: 0.2rem;
 			box-shadow: #00000029 0px 3px 6px;
@@ -76,10 +77,21 @@
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			width: 80%;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+
+			&-two {
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+				gap: 1rem;
+			}
 
 			&-input {
 				margin-right: 0;
-				margin-bottom: 1rem;
+				margin-bottom: 2rem;
 			}
 		}
 	}

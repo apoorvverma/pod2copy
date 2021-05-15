@@ -1,13 +1,37 @@
 import React from "react";
-import Button from "./_components/Button";
-import Input from "./_components/Input";
+import Button from "./../shared/Button";
+import Input from "./../shared/Input";
 import { Label } from "./Label";
 import { Subbutton } from "./Subbutton";
-import { IconRightArrow, IconDribbble, IconGoogle } from "./_components/Icons";
-import Github from "../../images/github.svg";
+
+import google from "../../assets/Google.svg";
+import dribbble from "../../assets/dribbble.svg";
+import github from "../../assets/github.svg";
+import btnarrow from "../../assets/btnarrow.svg";
 import "./login.scss";
 
+interface IUser {
+	email: string;
+	password: string;
+}
+
 function Login() {
+	const googleIcon = google;
+	const dribbbleIcon = dribbble;
+	const githubIcon = github;
+	const arrowIcon = btnarrow;
+
+	const [login, setLogin] = React.useState<IUser>({
+		email: "",
+		password: "",
+	});
+
+	const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+		e.preventDefault();
+		const userData = { ...login };
+		console.log(userData);
+	};
+
 	return (
 		<div className="login-container">
 			<div className="login-card">
@@ -16,39 +40,29 @@ function Login() {
 				</h2>
 				<div className="social-btns">
 					<Button
-						icon={<IconGoogle />}
-						iconAlign="btn--iconleft"
+						buttonSize="btn--medium"
 						buttonStyle="btn--google"
-						buttonSize="btn--medium"
-						onClick={(e) => e.preventDefault}
-					>
-						Google
-					</Button>
-
-					<Button
-						icon={
-							<img
-								src={Github}
-								alt=""
-								style={{ width: "14px", height: "14px" }}
-							/>
-						}
+						children="Google"
 						iconAlign="btn--iconleft"
-						buttonStyle="btn--github"
-						buttonSize="btn--medium"
-						onClick={(e) => e.preventDefault}
-					>
-						Github
-					</Button>
+						icon={googleIcon}
+						onClick={undefined}
+					/>
 					<Button
-						icon={<IconDribbble />}
+						buttonSize="btn--medium"
+						buttonStyle="btn--primary"
+						children="Github"
 						iconAlign="btn--iconleft"
+						icon={githubIcon}
+						onClick={undefined}
+					/>
+					<Button
+						buttonSize="btn--medium"
 						buttonStyle="btn--dribbble"
-						buttonSize="btn--medium"
-						onClick={(e) => e.preventDefault}
-					>
-						Dribbble
-					</Button>
+						children="Dribbble"
+						iconAlign="btn--iconleft"
+						icon={dribbbleIcon}
+						onClick={undefined}
+					/>
 				</div>
 				<div className="option">
 					<hr />
@@ -56,30 +70,34 @@ function Login() {
 					<hr />
 				</div>
 				<div className="registraton-from">
-					<form action="">
+					<form action="" onSubmit={handleSubmit}>
 						<Input
 							value=""
-							type="text"
-							placeholder="Enter text here..."
+							type="email"
+							placeholder="Enter Email..."
 							label="email"
-							onChange={(e: any) => e.preventDefalut()}
+							name="email"
+							state={login}
+							setState={setLogin}
 						/>
 
 						<Input
 							label="password"
 							value=""
-							type="text"
+							type="password"
 							subButton={true}
-							placeholder="Enter text here..."
-							onChange={(e: any) => e.preventDefalut()}
+							placeholder="Enter Password..."
+							name="password"
+							state={login}
+							setState={setLogin}
 						/>
-						{/* <Subbutton subButtonType='forgot' />  */}
 
 						<Button
-							icon={<IconRightArrow />}
+							icon={arrowIcon}
 							buttonStyle="btn--primary"
 							buttonSize="btn--large"
-							onClick={(e) => e.preventDefault}
+							onClick={undefined}
+							type="submit"
 						>
 							Take Me To The Village
 						</Button>

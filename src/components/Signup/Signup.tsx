@@ -28,11 +28,11 @@ const Signup = () => {
 		password: "",
 	});
 	// handleInput ()=> handles input states
-	const handleInput: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-		const name = e.target.name;
-		const value = e.target.value;
-		setSignup({ ...signup, [name]: value });
-	};
+	// const handleInput: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+	// 	const name = e.target.name;
+	// 	const value = e.target.value;
+	// 	setSignup({ ...signup, [name]: value });
+	// };
 	// handleSubmit ()=> handles form submission
 	const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
 		e.preventDefault();
@@ -79,70 +79,56 @@ const Signup = () => {
 				<div className="registraton-from">
 					<form action="" onSubmit={handleSubmit}>
 						<div className="user-name" id="user-name">
-							<div id="first-name" className="input-elems">
-								<label htmlFor="firstname">First name</label>
-								{/* <input
-                type="text"
-                name="firstname"
-                value={signup.firstname}
-                onChange={handleInput}
-                placeholder="first name"
-              /> */}
-
-								<Input
-									value={signup.firstname}
-									onChange={() => handleInput}
-									placeholder="first name"
-									name="firstname"
-									type="text"
-								/>
-							</div>
-
-							<div id="last-name" className="input-elems">
-								<label htmlFor="lastname">Last name</label>
-								<Input
-									value={signup.lastname}
-									onChange={handleInput}
-									placeholder="last name"
-									name="lastname"
-									type="text"
-								/>
-							</div>
-						</div>
-
-						<div className="input-elems outer-elems" id="email">
-							<label htmlFor="email">Email</label>
 							<Input
-								value={signup.email}
-								onChange={handleInput}
-								placeholder="email"
-								name="email"
-								type="email"
+								value={signup.firstname}
+								state={signup}
+								setState={setSignup}
+								placeholder="first name"
+								name="firstname"
+								type="text"
+								label="First name"
 							/>
-						</div>
 
-						<div className="input-elems  outer-elems" id="password">
-							<label htmlFor="password">Password</label>
 							<Input
-								value={signup.password}
-								onChange={handleInput}
-								placeholder="password"
-								name="password"
-								type="password"
+								value={signup.lastname}
+								state={signup}
+								setState={setSignup}
+								placeholder="last name"
+								name="lastname"
+								type="text"
+								label="Last name"
 							/>
 						</div>
+						<Input
+							value={signup.email}
+							state={signup}
+							setState={setSignup}
+							placeholder="email"
+							name="email"
+							type="email"
+							label="Email"
+						/>
 
-						<div className="signup-btn-container">
-							<Button
-								buttonSize="btn--large"
-								buttonStyle="btn--perimary"
-								children="Take Me To The Village"
-								iconAlign="btn--iconleft"
-								icon={arrowIcon}
-								onClick={undefined}
-								type="submit"
-							/>
-						</div>
+						<Input
+							value={signup.password}
+							state={signup}
+							setState={setSignup}
+							placeholder="password"
+							name="password"
+							type="password"
+							label="Password"
+						/>
+
+						<Button
+							buttonSize="btn--large"
+							buttonStyle="btn--perimary"
+							children="Take Me To The Village"
+							iconAlign="btn--iconleft"
+							icon={arrowIcon}
+							onClick={undefined}
+							type="submit"
+						/>
+
 						<div className="have-account">
 							<p className="subtitles">
 								Already have an account? <a href="#password"> Sign in</a>

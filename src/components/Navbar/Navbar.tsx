@@ -9,9 +9,14 @@ const Navbar: React.FC = () => {
 		<div className="nav-container">
 			<div className="logo">Hustlers Village</div>
 			<div className="nav-elements">
-				<p>Home</p>
+				<Link to="/">
+					<p>Home</p>
+				</Link>
 				<p>How It Works?</p>
-				<p>Contact</p>
+				<Link to="/career">
+					<p>Contact</p>
+				</Link>
+
 				{/* <button className="Login">Log in</button>
                 <button  className="Register">Register 🡪</button> */}
 				<Link to="/login">

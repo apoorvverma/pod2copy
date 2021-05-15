@@ -1,37 +1,30 @@
 import React from "react";
-// import { useState } from "react";
-// import { useHistory } from "react-router-dom";
 import Button from "../shared/Button";
 import Input from "../shared/Input";
-// import { IconRightArrow } from "./../shared/Icons";
 import IconRightArrow from "./../../assets/Icon-metro-arrow-right.svg";
 import "./HeroSection.scss";
 
 interface HSprops {
-	// username: any;
+	username: string;
 }
 
 const HeroSection: React.FC = () => {
-	// const [username, setUsername] = useState<HSprops["username"]>(
-	// 	"hustlersvillage.com/"
-	// );
+	const [username, setUsername] = React.useState<HSprops>({
+		username: "",
+	});
 
-	// const history = useHistory();
+	const url: string = "hustlersvillage.com/";
 
-	// // hancleClick
-	// const handleClick = (): void => {
-	// 	console.log(username);
-	// 	history.push("/select-role");
-	// };
+	const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+		e.preventDefault();
+		const userData = username.username;
+		console.log(`${url}${userData}`);
+	};
 
 	// handleChange
 	const handleChange = (
 		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-	): void => {
-		// setUsername({
-		// 	username: `hustlersvillage.com/${e.target.value}`,
-		// });
-	};
+	): void => {};
 
 	return (
 		<div className="hero">
@@ -39,21 +32,26 @@ const HeroSection: React.FC = () => {
 				let your <span>hustle</span> speak for itself.
 			</h1>
 			<div className="hero-form">
-				<Input
-					value=""
-					placeholder="your-name"
-					type="text"
-					onChange={handleChange}
-				/>
+				<form className="hero-form-two" onSubmit={handleSubmit}>
+					<Input
+						value=""
+						placeholder="your-name"
+						type="text"
+						state={username}
+						name="username"
+						setState={setUsername}
+					/>
 
-				<Button
-					icon={IconRightArrow}
-					buttonStyle="btn--blue"
-					buttonSize="btn--medium"
-					onClick={(e) => e.preventDefault}
-				>
-					Start Hustling
-				</Button>
+					<Button
+						icon={IconRightArrow}
+						buttonStyle="btn--blue"
+						buttonSize="btn--medium"
+						type="submit"
+						onClick={undefined}
+					>
+						Start Hustling
+					</Button>
+				</form>
 			</div>
 			<p className="hero-text">It’s free, and takes less than a minute</p>
 		</div>
